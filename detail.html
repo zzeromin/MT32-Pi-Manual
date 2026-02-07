@@ -17,7 +17,7 @@
         <header class="header">
             <a href="index.html" class="btn-secondary">← 퀵 가이드로 돌아가기</a>
             <h1 style="margin-top: 20px;">Plumkit MT32-Pi<br>상세 매뉴얼</h1>
-            <p>"납땜 끝. 이제 심장만 꽂으세요."</p>
+            <p>"조립 완료. 파이만 꽂으세요."</p>
         </header>
 
         <!-- 1분 체크리스트 -->
@@ -33,11 +33,11 @@
 
         <!-- 1단계 -->
         <section class="card">
-            <h2>1단계: 심장 장착</h2>
+            <h2>1단계: Pi Zero 2W 장착</h2>
             <h3>해야 할 것</h3>
             <ul class="instruction-list">
                 <li>Pi Zero 2 W → 메인보드 40핀에 수직으로 꾹</li>
-                <li>푸른 전열 시트 바닥 밀착 확인</li>
+                <li>전열 시트 바닥 밀착 확인</li>
                 <li>Micro SD 카드 삽입 → 케이스 닫기</li>
             </ul>
             <div class="warning">
@@ -53,7 +53,15 @@
                 <li><a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_HERE" target="_blank">여기서 펌웨어
                         다운로드</a></li>
                 <li>압축 해제 → SD 카드 최상위 폴더에 전체 복사</li>
-                <li><code>MT32_CONTROL.ROM</code> 파일도 같은 위치에 추가</li>
+                <li>
+                    <code>MT32_CONTROL.ROM</code> 파일 추가 (별도 준비)<br>
+                    <small style="display: block; margin-top: 5px; color: #666; font-size: 0.85em; line-height: 1.4;">
+                        ※ 저작권 보호를 위해 ROM 파일은 직접 제공하지 않습니다. <a
+                            href="https://www.google.com/search?q=Roland+MT-32+and+CM-32L+ROM+files" target="_blank"
+                            style="color: #6200EE; text-decoration: underline;">이곳(구글 검색)</a> 등을 통해 필요한 파일을 직접 구하여 같은
+                        위치에 넣어주세요.
+                    </small>
+                </li>
             </ul>
             <p class="instruction"><strong>완료 기준:</strong> SD 카드 루트에 .img 또는 .bin 파일들이 보이면 OK</p>
         </section>
@@ -74,12 +82,12 @@
                         <tr>
                             <td>DC 5V (후면)</td>
                             <td>전원 어댑터</td>
-                            <td>5V 3A 필수</td>
+                            <td>5V 3A 이상 필수</td>
                         </tr>
                         <tr>
                             <td>USB-C (후면)</td>
                             <td>PC / 라즈베리파이</td>
-                            <td>드라이브 불필요</td>
+                            <td>추가 파일 불필요</td>
                         </tr>
                         <tr>
                             <td>AUX (후면)</td>
@@ -125,7 +133,7 @@ midiconfig = (장치 관리자의 Plumkit 번호)</pre>
                         <tr>
                             <td>소리 끊김</td>
                             <td>전원 부족</td>
-                            <td>5V 3A 어댑터 사용</td>
+                            <td>5V 3A 이상 어댑터 사용</td>
                         </tr>
                         <tr>
                             <td>인식 안됨</td>
@@ -148,7 +156,12 @@ midiconfig = (장치 관리자의 Plumkit 번호)</pre>
             <ul class="instruction-list">
                 <li><strong>로터리 인코더 회전:</strong> 볼륨 조절</li>
                 <li><strong>로터리 인코더 누름:</strong> 메뉴 진입</li>
-                <li><strong>SYNTH 버튼:</strong> MT-32 ↔ General MIDI 전환</li>
+                <li>
+                    <strong>SYNTH 버튼:</strong> MT-32 ↔ General MIDI 전환
+                    <div style="font-size: 0.85em; color: #d32f2f; margin-top: 4px;">
+                        ※ 반드시 음악 정지 후 눌러주세요. (재생 중 전환 시 음악 깨짐 발생)
+                    </div>
+                </li>
             </ul>
         </section>
 
