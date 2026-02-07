@@ -1,0 +1,19 @@
+# System files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python (if needed later)
+__pycache__/
+*.pyc
+venv/
+env/
+
+# Logs
+*.log
