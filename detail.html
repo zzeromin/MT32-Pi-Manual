@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Plumkit MT32-Pi 상세 매뉴얼. 조립부터 상세 설정, 트러블슈팅까지 제공합니다.">
+    <title>Plumkit MT32-Pi 상세 매뉴얼</title>
+    <link rel="stylesheet" href="static/css/manual.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="btn-secondary">← 퀵 가이드로 돌아가기</a>
+            <h1 style="margin-top: 20px;">Plumkit MT32-Pi<br>상세 매뉴얼</h1>
+            <p>"납땜 끝. 이제 심장만 꽂으세요."</p>
+        </header>
+
+        <!-- 1분 체크리스트 -->
+        <section class="card">
+            <h2>⚡ 1분 체크리스트</h2>
+            <ul class="checklist">
+                <li>Pi Zero 2 W 꽂기</li>
+                <li>SD 카드 삽입</li>
+                <li>전원 + USB 연결</li>
+                <li>게임 실행</li>
+            </ul>
+        </section>
+
+        <!-- 1단계 -->
+        <section class="card">
+            <h2>1단계: 심장 장착</h2>
+            <h3>해야 할 것</h3>
+            <ul class="instruction-list">
+                <li>Pi Zero 2 W → 메인보드 40핀에 수직으로 꾹</li>
+                <li>푸른 전열 시트 바닥 밀착 확인</li>
+                <li>Micro SD 카드 삽입 → 케이스 닫기</li>
+            </ul>
+            <div class="warning">
+                <strong>⚠️ 주의:</strong> 핀 방향 확인 (어긋나면 불량의 원인이 됩니다)
+            </div>
+        </section>
+
+        <!-- 2단계 -->
+        <section class="card">
+            <h2>2단계: 펌웨어 설치</h2>
+            <h3>파일 준비</h3>
+            <ul class="instruction-list">
+                <li><a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_HERE" target="_blank">여기서 펌웨어
+                        다운로드</a></li>
+                <li>압축 해제 → SD 카드 최상위 폴더에 전체 복사</li>
+                <li><code>MT32_CONTROL.ROM</code> 파일도 같은 위치에 추가</li>
+            </ul>
+            <p class="instruction"><strong>완료 기준:</strong> SD 카드 루트에 .img 또는 .bin 파일들이 보이면 OK</p>
+        </section>
+
+        <!-- 3단계 -->
+        <section class="card">
+            <h2>3단계: 연결</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>단자</th>
+                            <th>연결 대상</th>
+                            <th>규격</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DC 5V (후면)</td>
+                            <td>전원 어댑터</td>
+                            <td>5V 3A 필수</td>
+                        </tr>
+                        <tr>
+                            <td>USB-C (후면)</td>
+                            <td>PC / 라즈베리파이</td>
+                            <td>드라이브 불필요</td>
+                        </tr>
+                        <tr>
+                            <td>AUX (후면)</td>
+                            <td>스피커 / 헤드폰</td>
+                            <td>3.5mm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4단계 -->
+        <section class="card">
+            <h2>4단계: 게임 설정</h2>
+            <h3>A. DOSBox (PC)</h3>
+            <p><code>dosbox.conf</code> 파일을 수정하세요.</p>
+            <pre>
+[midi]
+mididevice = default
+midiconfig = (장치 관리자의 Plumkit 번호)</pre>
+            <p class="instruction">게임 실행 → 사운드 설정 → Roland MT-32 선택</p>
+
+            <h3 style="margin-top: 30px;">B. RetroPie / Recalbox</h3>
+            <ul class="instruction-list">
+                <li>설정 → MIDI Output → Plumkit USB MIDI</li>
+                <li>ScummVM / DOSBox-Pure → MT-32 에뮬레이션 ON</li>
+            </ul>
+        </section>
+
+        <!-- 문제 해결 -->
+        <section class="card">
+            <h2>⚠️ 문제 해결</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>증상</th>
+                            <th>원인</th>
+                            <th>해결</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>소리 끊김</td>
+                            <td>전원 부족</td>
+                            <td>5V 3A 어댑터 사용</td>
+                        </tr>
+                        <tr>
+                            <td>인식 안됨</td>
+                            <td>USB 불량</td>
+                            <td>케이블 교체</td>
+                        </tr>
+                        <tr>
+                            <td>볼륨 조절 안됨</td>
+                            <td>조작 미숙</td>
+                            <td>로터리 인코더 회전</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 컨트롤 -->
+        <section class="card">
+            <h2>🎮 컨트롤</h2>
+            <ul class="instruction-list">
+                <li><strong>로터리 인코더 회전:</strong> 볼륨 조절</li>
+                <li><strong>로터리 인코더 누름:</strong> 메뉴 진입</li>
+                <li><strong>SYNTH 버튼:</strong> MT-32 ↔ General MIDI 전환</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <p>기술 지원: <a href="https://smartstore.naver.com/plumkit/notice">플럼킷 게시판</a></p>
+            <p>원본 프로젝트: <a href="https://github.com/dwhinham/mt32-pi" target="_blank">github.com/dwhinham/mt32-pi</a>
+            </p>
+            <p class="copyright">Made by Plumkit | 복잡함은 우리가 해결했습니다</p>
+            <div style="margin-top: 20px;">
+                <a href="index.html" class="btn-secondary">퀵 가이드 보기</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
