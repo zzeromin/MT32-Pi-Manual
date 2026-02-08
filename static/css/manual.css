@@ -96,9 +96,10 @@ p {
 }
 
 .logo {
-    width: 60px;
+    width: 120px;
+    /* 로고 크기 확대 */
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 /* Card UI */
@@ -107,17 +108,20 @@ p {
     border-radius: 16px;
     padding: 25px;
     margin-bottom: 25px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Images */
 .image-container {
-    background-color: var(--bg-color);
+    background-color: #ffffff;
+    /* 흰색 배경 이미지를 위해 배경을 흰색으로 유지하거나 밝은 회색으로 조정 */
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 15px;
     text-align: center;
     border: 1px solid var(--border-color);
+    padding: 10px;
+    /* 이미지 주변에 살짝 여백을 주어 카드 경계와 분리 */
 }
 
 .image-container img {
