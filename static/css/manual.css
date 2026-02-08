@@ -96,10 +96,12 @@ p {
 }
 
 .logo {
-    width: 120px;
-    /* 로고 크기 확대 */
+    width: 180px;
+    /* 로고 크기 대폭 확대 */
+    max-width: 80%;
+    /* 모바일 화면 대비 최대 폭 제한 */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 /* Card UI */
