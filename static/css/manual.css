@@ -113,15 +113,12 @@ p {
 
 /* Images */
 .image-container {
-    background-color: #ffffff;
-    /* 흰색 배경 이미지를 위해 배경을 흰색으로 유지하거나 밝은 회색으로 조정 */
+    background-color: transparent;
+    /* 투명 배경 PNG를 위해 투명으로 변경 */
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 15px;
     text-align: center;
-    border: 1px solid var(--border-color);
-    padding: 10px;
-    /* 이미지 주변에 살짝 여백을 주어 카드 경계와 분리 */
 }
 
 .image-container img {
