@@ -21,25 +21,39 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <h1>Plumkit MT32-Pi<br>퀵 가이드</h1>
+            <h1>MT32-Pi 퀵 가이드</h1>
             <p>환영합니다! 아래 순서대로 따라해 주세요.</p>
         </header>
 
         <!-- Section 1: H/W Setup -->
         <section class="card">
             <h2>1. 하드웨어 설치</h2>
-            <p class="instruction">Pi Zero 2 W를 아래 방향으로 꽂아주세요.</p>
-            <div class="image-container">
-                <img src="https://placehold.co/600x400/e0e0e0/111111?text=Pi+Zero+Install+Image" alt="Pi Zero 설치 방향"
-                    loading="lazy">
-                <p class="caption">※ 40핀 헤더 방향 주의</p>
+
+            <!-- Step 1 -->
+            <div class="hw-step">
+                <p class="instruction"><strong>STEP 1.</strong> Pi Zero 2WH에 절연시트 붙이기</p>
+                <div class="image-container">
+                    <img src="static/img/hw_step1.jpg" alt="절연시트 부착" loading="lazy">
+                    <p class="caption">칩셋 위에 절연 시트를 중앙에 맞춰 붙여주세요.</p>
+                </div>
             </div>
 
-            <p class="instruction">케이블 연결 방법입니다.</p>
-            <div class="image-container">
-                <img src="https://placehold.co/600x400/e0e0e0/111111?text=Connection+Diagram" alt="케이블 연결도"
-                    loading="lazy">
-                <p class="caption">USB-C 전원 / AUX 오디오 출력</p>
+            <!-- Step 2 -->
+            <div class="hw-step">
+                <p class="instruction"><strong>STEP 2.</strong> Pi Zero 2WH를 아래 방향으로 꽂기</p>
+                <div class="image-container">
+                    <img src="static/img/hw_step2.jpg" alt="Pi Zero 장착" loading="lazy">
+                    <p class="caption">※ 40핀 헤더 방향 주의 (어긋나지 않게 꾹 눌러주세요)</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="hw-step">
+                <p class="instruction"><strong>STEP 3.</strong> 케이스 하판을 덮고 볼트로 고정하기</p>
+                <div class="image-container">
+                    <img src="static/img/hw_step3.jpg" alt="케이스 조립" loading="lazy">
+                    <p class="caption">하판을 덮고 동봉된 볼트를 꽉 조여주세요.</p>
+                </div>
             </div>
         </section>
 
@@ -55,21 +69,9 @@
             <p class="note">※ 다운로드된 압축 파일을 SD카드에 그대로 풀어주세요.</p>
         </section>
 
-        <!-- Section 3: Video Guide -->
-        <section class="card">
-            <h2>3. 영상 가이드</h2>
-            <p class="instruction">설치 영상을 참고하세요.</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/pdbIXR1MZmk" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-        </section>
-
         <!-- Footer -->
         <footer class="footer">
             <p>문의: 라즈겜동 영민</p>
-            <p><a href="https://smartstore.naver.com/plumkit/">스토어 바로가기</a></p>
             <p style="margin-top: 15px;">
                 <a href="detail.html" class="btn-download"
                     style="background-color: #222; color: #ffffff !important; animation: none; height: auto; padding: 12px; font-size: 16px; box-shadow: none;">
