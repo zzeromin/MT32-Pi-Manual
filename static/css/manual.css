@@ -5,10 +5,22 @@
     padding: 0;
 }
 
+:root {
+    --bg-color: #000000;
+    --card-bg: #1C1C1E;
+    --secondary-bg: #2C2C2E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A1A1A6;
+    --accent-color: #BB86FC;
+    --border-color: #3A3A3C;
+    --warning-bg: #2C2510;
+    --warning-text: #FFD60A;
+}
+
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    background-color: #F5F5F7;
-    color: #111111;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
@@ -28,50 +40,50 @@ html {
 h1 {
     font-size: 28px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     line-height: 1.3;
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
-    margin-bottom: 15px;
-    color: #6200EE;
-    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
 }
 
 h3 {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 700;
     margin: 20px 0 10px 0;
-    color: #333;
+    color: var(--text-primary);
 }
 
 p {
-    font-size: 17px;
-    /* 살짝 조정 */
+    font-size: 16px;
     margin-bottom: 10px;
+    color: var(--text-secondary);
 }
 
 .instruction {
     font-weight: 500;
     margin-bottom: 15px;
+    color: var(--text-primary);
 }
 
 .caption {
     font-size: 14px;
-    color: #666;
+    color: var(--text-secondary);
     text-align: center;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .note {
     font-size: 14px;
-    color: #d32f2f;
-    /* 경고성 메시지는 붉은 계열 */
-    background-color: #ffebee;
-    padding: 10px;
+    color: var(--warning-text);
+    background-color: var(--warning-bg);
+    padding: 12px;
     border-radius: 8px;
     margin-top: 15px;
 }
@@ -80,25 +92,32 @@ p {
 .header {
     text-align: center;
     margin-bottom: 30px;
-    padding: 20px 0;
+    padding: 30px 0;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 15px;
 }
 
 /* Card UI */
 .card {
-    background-color: #FFFFFF;
+    background-color: var(--card-bg);
     border-radius: 16px;
     padding: 25px;
     margin-bottom: 25px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Images */
 .image-container {
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
     border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
+    border: 1px solid var(--border-color);
 }
 
 .image-container img {
@@ -109,29 +128,28 @@ p {
 
 /* Buttons */
 .btn-download {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     padding: 18px;
     background-color: #6200EE;
-    /* Plumkit Point Color */
     color: white;
     text-align: center;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(98, 0, 238, 0.2);
-    transition: background-color 0.2s;
+    box-shadow: 0 4px 15px rgba(98, 0, 238, 0.4);
+    transition: all 0.2s;
     height: 60px;
-    /* 터치 영역 확보 */
     line-height: 24px;
     animation: pulse 2s infinite;
 }
 
 .btn-download:active {
     background-color: #3700B3;
-    transform: scale(0.96);
-    /* 클릭 시 좀 더 확실하게 눌리는 느낌 */
+    transform: scale(0.98);
 }
 
 @keyframes pulse {
@@ -148,69 +166,53 @@ p {
     }
 }
 
-.btn-download .icon {
-    margin-right: 8px;
-}
-
-/* Video Embed */
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    background-color: #000;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.icon {
+    margin-right: 10px;
+    font-size: 20px;
 }
 
 /* Footer */
 .footer {
     text-align: center;
     margin-top: 40px;
-    padding-bottom: 40px;
-    color: #666;
+    padding-bottom: 60px;
+    color: var(--text-secondary);
     font-size: 14px;
 }
 
 .footer a {
-    color: #6200EE;
-    text-decoration: none;
-    font-weight: 500;
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
-.footer .copyright {
-    margin-top: 20px;
+.copyright {
+    margin-top: 30px;
     font-size: 12px;
-    color: #999;
+    color: #444;
 }
 
 /* Detailed Manual Specifics */
 .checklist {
     list-style: none;
-    background: #f8f9fa;
+    background: var(--secondary-bg);
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 20px;
 }
 
 .checklist li {
-    font-size: 17px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
+    color: var(--text-primary);
 }
 
 .checklist li::before {
-    content: "✅";
-    margin-right: 10px;
+    content: "✓";
+    margin-right: 12px;
+    color: var(--accent-color);
+    font-weight: bold;
 }
 
 .instruction-list {
@@ -219,8 +221,13 @@ p {
 }
 
 .instruction-list li {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+.instruction-list strong {
+    color: var(--text-primary);
 }
 
 /* Table Styles */
@@ -229,74 +236,103 @@ p {
     overflow-x: auto;
     margin-bottom: 20px;
     border-radius: 12px;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 15px;
+    font-size: 14px;
     text-align: left;
 }
 
 th,
 td {
-    padding: 12px;
-    border-bottom: 1px solid #eee;
+    padding: 14px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 th {
-    background-color: #f8f9fa;
+    background-color: var(--secondary-bg);
     font-weight: 700;
-    color: #6200EE;
+    color: var(--accent-color);
 }
 
-tr:last-child td {
-    border-bottom: none;
+td {
+    color: var(--text-secondary);
 }
 
 /* Warning Box */
 .warning {
-    background-color: #fff3cd;
-    border-left: 4px solid #ffc107;
+    background-color: var(--warning-bg);
+    border-left: 4px solid var(--warning-text);
     padding: 15px;
     border-radius: 8px;
-    margin: 15px 0;
+    margin: 20px 0;
     font-size: 15px;
+    color: var(--warning-text);
 }
 
 .warning strong {
-    color: #856404;
+    color: var(--warning-text);
 }
 
 /* Code Snippet */
 code {
-    background: #2d2d2d;
-    color: #f8f8f2;
+    background: #333;
+    color: #E0E0E0;
     padding: 2px 6px;
     border-radius: 4px;
-    font-family: monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
 }
 
 pre {
-    background: #2d2d2d;
-    color: #f8f8f2;
-    padding: 15px;
-    border-radius: 10px;
+    background: #000;
+    color: #A1A1A6;
+    padding: 20px;
+    border-radius: 12px;
     overflow-x: auto;
-    margin: 10px 0;
-    font-size: 14px;
-    line-height: 1.5;
+    margin: 15px 0;
+    font-size: 13px;
+    line-height: 1.6;
+    border: 1px solid var(--border-color);
 }
 
 .btn-secondary {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #e0e0e0;
-    color: #333;
+    padding: 12px 24px;
+    background-color: var(--secondary-bg);
+    color: var(--text-primary);
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: 500;
-    margin-top: 10px;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.btn-secondary:active {
+    background-color: var(--border-color);
+}
+
+/* H/W Steps Enhancement */
+.hw-step {
+    margin-bottom: 40px;
+}
+
+.hw-step:last-child {
+    margin-bottom: 0;
+}
+
+.hw-step .instruction {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 30px 0;
 }
