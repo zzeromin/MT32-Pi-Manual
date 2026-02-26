@@ -76,7 +76,8 @@
                 </li>
                 <li>압축 해제 → SD 카드 최상위 폴더에 전체 복사</li>
                 <li>
-                    <code>mt32-pi를 최대한 활용하려면 총 5개의 ROM 파일 (구형/신형/CM-32L 제어 ROM, MT-32/CM-32L PCM ROM)이 필요합니다.</code> 파일
+                    <code>mt32-pi를 최대한 활용하려면 총 4개 이상의 ROM 파일 (구형/신형/CM-32L 제어 ROM, MT-32/CM-32L PCM ROM)이 필요합니다.</code>
+                    파일
                     추가 (별도 준비)<br>
                     <small style="display: block; margin-top: 10px; color: #aaa; font-size: 0.9em; line-height: 1.6;">
                         ※ 저작권 보호를 위해 ROM 파일은 직접 제공하지 않습니다. <br>
@@ -85,11 +86,16 @@
                         <a href="https://www.google.com/search?q=Roland+MT-32+and+CM-32L+ROM+files" target="_blank"
                             style="color: #BB86FC; font-weight: bold; text-decoration: underline;">이곳(구글 검색)</a> 등을 통해
                         필요한 파일을 직접 구하여 같은
-                        위치에 넣어주세요.
+                        위치에 넣어주세요.<br>
+                        <span style="display: block; margin-top: 8px; color: #888;">
+                            <strong>파일명 예시:</strong> <code>pcm_mt32.rom</code>, <code>ctrl_mt32_2_04.rom</code>,
+                            <code>pcm_cm32l.rom</code>, <code>ctrl_cm32l_1_02.rom</code>
+                        </span>
                     </small>
                 </li>
             </ul>
-            <p class="instruction"><strong>완료 기준:</strong> SD 카드 루트에 .img 또는 .bin 파일들이 보이면 OK</p>
+            <p class="instruction"><strong>완료 기준:</strong> SD 카드 <code>roms</code>폴더에 ctrl_xxx.rom, pcm_xxx.com 파일들이 보이면
+                OK</p>
         </section>
 
         <!-- 3단계 -->
@@ -202,4 +208,5 @@ midiconfig = (장치 관리자의 Plumkit 번호)</pre>
         </footer>
     </div>
 </body>
+
 </html>
