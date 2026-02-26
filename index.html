@@ -38,7 +38,7 @@
                 <img src="static/img/logo.png" alt="Plumkit Logo" class="logo">
                 <button class="btn-menu" id="menu-btn" aria-label="목차 열기">≡</button>
             </div>
-            <div class="step-counter">Step <span id="current-step-num">1</span> of 6</div>
+            <div class="step-counter">Step <span id="current-step-num">1</span> of 9</div>
             <div class="progress-container">
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
@@ -65,7 +65,7 @@
                 <section class="card">
                     <h2>1. 하드웨어 설치</h2>
                     <div class="hw-step">
-                        <p class="instruction"><strong>STEP 2.</strong> 케이스 아래쪽 볼트 2개를 풀기</p>
+                        <p class="instruction"><strong>STEP 2.</strong> 케이스 아래쪽 볼트 앞뒤 2개씩 풀기</p>
                         <div class="image-container">
                             <img src="static/img/hw_step2.png" alt="볼트 풀기" loading="lazy">
                         </div>
@@ -133,6 +133,48 @@
                     </div>
                 </section>
             </div>
+
+            <!-- Step 7 -->
+            <div class="step-item" data-step="7">
+                <section class="card">
+                    <h2>3. 케이블 연결</h2>
+                    <div class="hw-step">
+                        <p class="instruction"><strong>STEP 7.</strong> DC 5V 전원 연결</p>
+                        <div class="image-container">
+                            <img src="static/img/cable_step1.png" alt="전원 연결" loading="lazy">
+                            <p class="caption">※ 5V 3A 이상 어댑터 사용 필수 (안정적인 동작을 위해 권장)</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="step-item" data-step="8">
+                <section class="card">
+                    <h2>3. 케이블 연결</h2>
+                    <div class="hw-step">
+                        <p class="instruction"><strong>STEP 8.</strong> USB-C - PC / 라즈베리파이 연결</p>
+                        <div class="image-container">
+                            <img src="static/img/cable_step2.png" alt="USB-C 연결" loading="lazy">
+                            <p class="caption">동봉된 USB-C 케이블로 PC 또는 라즈베리파이와 연결하세요.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Step 9 -->
+            <div class="step-item" data-step="9">
+                <section class="card">
+                    <h2>3. 케이블 연결</h2>
+                    <div class="hw-step">
+                        <p class="instruction"><strong>STEP 9.</strong> AUX - 스피커 / 헤드폰 연결</p>
+                        <div class="image-container">
+                            <img src="static/img/cable_step2.png" alt="AUX 연결" loading="lazy">
+                            <p class="caption">3.5mm 단자를 통해 스피커나 헤드폰을 연결하세요.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
 
         <!-- Quick Jump Modal -->
@@ -167,11 +209,26 @@
                         </a>
                     </li>
                     <li class="jump-item">
-                        <div class="jump-link section-break">2. 펌웨어 설치</div>
-                    </li>
-                    <li class="jump-item">
                         <a href="javascript:void(0)" onclick="jumpToStep(6)" class="jump-link">
                             <span class="step-tag">Step 6</span> 펌웨어 다운로드
+                        </a>
+                    </li>
+                    <li class="jump-item">
+                        <div class="jump-link section-break">3. 케이블 연결</div>
+                    </li>
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(7)" class="jump-link">
+                            <span class="step-tag">Step 7</span> 전원 연결 (DC 5V)
+                        </a>
+                    </li>
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(8)" class="jump-link">
+                            <span class="step-tag">Step 8</span> USB-C 연결
+                        </a>
+                    </li>
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(9)" class="jump-link">
+                            <span class="step-tag">Step 9</span> AUX 연결
                         </a>
                     </li>
                 </ul>
@@ -203,7 +260,7 @@
 
     <script>
         let currentStep = 1;
-        const totalSteps = 6;
+        const totalSteps = 9;
         const progressBar = document.getElementById('progress-bar');
         const currentStepNum = document.getElementById('current-step-num');
         const prevBtn = document.getElementById('prev-btn');
