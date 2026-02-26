@@ -32,81 +32,167 @@
 
 <body>
     <div class="container">
-        <!-- Header -->
+        <!-- Header with Progress -->
         <header class="header">
-            <img src="static/img/logo.png" alt="Plumkit Logo" class="logo">
-            <h1>MT32-Pi 퀵 가이드</h1>
-            <p>환영합니다! 아래 순서대로 따라해 주세요.</p>
+            <div class="header-top">
+                <img src="static/img/logo.png" alt="Plumkit Logo" class="logo">
+                <button class="btn-menu" id="menu-btn" aria-label="목차 열기">≡</button>
+            </div>
+            <div class="step-counter">Step <span id="current-step-num">1</span> of 6</div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
         </header>
 
-        <!-- Section 1: H/W Setup -->
-        <section class="card">
-            <h2>1. 하드웨어 설치</h2>
-
+        <!-- Steps Container -->
+        <div id="steps-container">
             <!-- Step 1 -->
-            <div class="hw-step">
-                <p class="instruction"><strong>STEP 1.</strong> Pi Zero 2WH에 절연시트 붙이기</p>
-                <div class="image-container">
-                    <img src="static/img/hw_step1.jpg" alt="절연시트 부착" loading="lazy">
-                    <p class="caption">칩셋 위에 절연 시트를 중앙에 맞춰 붙여주세요.</p>
-                </div>
+            <div class="step-item active" data-step="1">
+                <section class="card">
+                    <h2>1. 하드웨어 설치</h2>
+                    <div class="hw-step">
+                        <p class="instruction"><strong>STEP 1.</strong> Pi Zero 2WH에 절연시트 붙이기</p>
+                        <div class="image-container">
+                            <img src="static/img/hw_step1.jpg" alt="절연시트 부착" loading="lazy">
+                            <p class="caption">칩셋 위에 절연 시트를 중앙에 맞춰 붙여주세요.</p>
+                        </div>
+                    </div>
+                </section>
             </div>
 
             <!-- Step 2 -->
-            <div class="hw-step">
-                <p class="instruction"><strong>STEP 2.</strong> 케이스 아래쪽 볼트 2개를 풀기</p>
-                <div class="image-container">
-                    <img src="static/img/hw_step2.png" alt="볼트 풀기" loading="lazy">
-                </div>
+            <div class="step-item" data-step="2">
+                <section class="card">
+                    <h2>1. 하드웨어 설치</h2>
+                    <div class="hw-step">
+                        <p class="instruction"><strong>STEP 2.</strong> 케이스 아래쪽 볼트 2개를 풀기</p>
+                        <div class="image-container">
+                            <img src="static/img/hw_step2.png" alt="볼트 풀기" loading="lazy">
+                        </div>
+                    </div>
+                </section>
             </div>
 
             <!-- Step 3 -->
-            <div class="hw-step">
-                <p class="instruction"><strong>STEP 3.</strong> 케이스 아래 덮개 열기</p>
-                <div class="image-container">
-                    <img src="static/img/hw_step3.png" alt="덮개 열기" loading="lazy">
-                </div>
+            <div class="step-item" data-step="3">
+                <section class="card">
+                    <h2>1. 하드웨어 설치</h2>
+                    <div class="hw-step">
+                        <p class="instruction"><strong>STEP 3.</strong> 케이스 아래 덮개 열기</p>
+                        <div class="image-container">
+                            <img src="static/img/hw_step3.png" alt="덮개 열기" loading="lazy">
+                        </div>
+                    </div>
+                </section>
             </div>
 
             <!-- Step 4 -->
-            <div class="hw-step">
-                <p class="instruction"><strong>STEP 4.</strong> Pi Zero 2WH를 아래 방향으로 꽂기</p>
-                <div class="image-container">
-                    <img src="static/img/hw_step4.png" alt="Pi Zero 장착" loading="lazy">
-                    <p class="caption">※ 40핀 헤더 방향 주의 (어긋나지 않게 꾹 눌러주세요)</p>
-                </div>
+            <div class="step-item" data-step="4">
+                <section class="card">
+                    <h2>1. 하드웨어 설치</h2>
+                    <div class="hw-step">
+                        <p class="instruction"><strong>STEP 4.</strong> Pi Zero 2WH를 아래 방향으로 꽂기</p>
+                        <div class="image-container">
+                            <img src="static/img/hw_step4.png" alt="Pi Zero 장착" loading="lazy">
+                            <p class="caption">※ 40핀 헤더 방향 주의 (어긋나지 않게 꾹 눌러주세요)</p>
+                        </div>
+                    </div>
+                </section>
             </div>
 
             <!-- Step 5 -->
-            <div class="hw-step">
-                <p class="instruction"><strong>STEP 5.</strong> 케이스 아래 덮개를 닫고 볼트로 고정하기</p>
-                <div class="image-container">
-                    <img src="static/img/hw_step5.png" alt="케이스 닫고 고정 1" loading="lazy">
-                </div>
-                <div class="image-container">
-                    <img src="static/img/hw_step6.png" alt="케이스 닫고 고정 2" loading="lazy">
-                    <p class="caption">하판을 덮고 동봉된 볼트를 꽉 조여주세요.</p>
-                </div>
+            <div class="step-item" data-step="5">
+                <section class="card">
+                    <h2>1. 하드웨어 설치</h2>
+                    <div class="hw-step">
+                        <p class="instruction"><strong>STEP 5.</strong> 케이스 아래 덮개를 닫고 볼트로 고정하기</p>
+                        <div class="image-container">
+                            <img src="static/img/hw_step5.png" alt="케이스 닫고 고정 1" loading="lazy">
+                        </div>
+                        <div class="image-container">
+                            <img src="static/img/hw_step6.png" alt="케이스 닫고 고정 2" loading="lazy">
+                            <p class="caption">하판을 덮고 동봉된 볼트를 꽉 조여주세요.</p>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
 
-        <!-- Section 2: S/W Setup -->
-        <section class="card">
-            <h2>2. 펌웨어 다운로드</h2>
-            <p class="instruction">아래 버튼을 눌러 전용 펌웨어를 받으세요.</p>
-            <!-- PLACEHOLDER ID used here. Replace with actual Google Drive File ID later -->
-            <a href="https://drive.google.com/file/d/1BzTVve-P7l8zVAbQ4SYomcOjjDW9tHoO/view?usp=sharing"
-                class="btn-download" target="_blank">
-                <span class="icon">⬇️</span> 펌웨어 다운로드 (수정필요)
-            </a>
-            <p class="note">※ 다운로드된 압축 파일을 SD카드에 그대로 풀어주세요.</p>
-        </section>
+            <!-- Step 6 -->
+            <div class="step-item" data-step="6">
+                <section class="card">
+                    <h2>2. 펌웨어 다운로드</h2>
+                    <p class="instruction">아래 버튼을 눌러 전용 펌웨어를 받으세요.</p>
+                    <a href="https://drive.google.com/file/d/1BzTVve-P7l8zVAbQ4SYomcOjjDW9tHoO/view?usp=sharing"
+                        class="btn-download" target="_blank">
+                        <span class="icon">⬇️</span> 펌웨어 다운로드
+                    </a>
+                    <p class="note">※ 다운로드된 압축 파일을 SD카드에 그대로 풀어주세요.</p>
+                    <div class="image-container" style="margin-top: 20px;">
+                        <img src="static/img/sw_step1.png" alt="다운로드 방법" loading="lazy">
+                        <p class="caption">다운로드 방법</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Quick Jump Modal -->
+        <div class="nav-overlay" id="nav-overlay">
+            <div class="nav-modal">
+                <h3>
+                    <span>전체 목차</span>
+                    <button class="btn-close" id="close-menu">✕</button>
+                </h3>
+                <ul class="jump-list">
+                    <li class="jump-item">
+                        <div class="jump-link section-break">1. 하드웨어 조립</div>
+                    </li>
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(1)" class="jump-link">
+                            <span class="step-tag">Step 1</span> 절연시트 부착
+                        </a>
+                    </li>
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(2)" class="jump-link">
+                            <span class="step-tag">Step 2-3</span> 케이스 열기
+                        </a>
+                    </li>
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(4)" class="jump-link">
+                            <span class="step-tag">Step 4</span> 파이 장착
+                        </a>
+                    </li>
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(5)" class="jump-link">
+                            <span class="step-tag">Step 5</span> 케이스 닫기
+                        </a>
+                    </li>
+                    <li class="jump-item">
+                        <div class="jump-link section-break">2. 펌웨어 설치</div>
+                    </li>
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(6)" class="jump-link">
+                            <span class="step-tag">Step 6</span> 펌웨어 다운로드
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="btn-nav btn-prev" id="prev-btn" disabled>
+                <span>이전</span>
+            </button>
+            <button class="btn-nav btn-next" id="next-btn">
+                <span>다음 단계</span>
+            </button>
+        </div>
 
         <!-- Footer -->
         <footer class="footer">
             <p>문의: 라즈겜동 영민</p>
             <p style="margin-top: 15px;">
-                <a href="detail.html" class="btn-download"
+                <a href="detail.html" class="btn-secondary"
                     style="background-color: #222; color: #ffffff !important; animation: none; height: auto; padding: 12px; font-size: 16px; box-shadow: none;">
                     📄 상세 매뉴얼 보기
                 </a>
@@ -114,6 +200,88 @@
             <p class="copyright">© 2026 Plumkit. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 6;
+        const progressBar = document.getElementById('progress-bar');
+        const currentStepNum = document.getElementById('current-step-num');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const steps = document.querySelectorAll('.step-item');
+
+        // Modal elements
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const navOverlay = document.getElementById('nav-overlay');
+
+        function updateUI() {
+            // Update Progress Bar
+            const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            // Update Text
+            currentStepNum.innerText = currentStep;
+
+            // Update Buttons
+            prevBtn.disabled = currentStep === 1;
+            nextBtn.innerText = currentStep === totalSteps ? '완료' : '다음 단계';
+
+            // Show/Hide Steps
+            steps.forEach(step => {
+                step.classList.remove('active');
+                if (parseInt(step.dataset.step) === currentStep) {
+                    step.classList.add('active');
+                }
+            });
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Jump to specific step
+        window.jumpToStep = function (stepNum) {
+            currentStep = stepNum;
+            updateUI();
+            closeMenu();
+        };
+
+        // Modal Controls
+        function openMenu() {
+            navOverlay.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Scroll lock
+        }
+
+        function closeMenu() {
+            navOverlay.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        navOverlay.addEventListener('click', (e) => {
+            if (e.target === navOverlay) closeMenu();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateUI();
+            } else {
+                alert('축하합니다! 모든 준비가 끝났습니다.');
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateUI();
+            }
+        });
+
+        // Initialize progress
+        updateUI();
+    </script>
 </body>
 
 </html>
