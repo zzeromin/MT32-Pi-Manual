@@ -39,15 +39,33 @@
             </div>
         </header>
 
-        <!-- 1분 체크리스트 -->
+        <!-- Overview Section -->
         <section class="card">
-            <h2>⚡ 1분 체크리스트</h2>
-            <ul class="checklist">
-                <li>Pi Zero 2WH 꽂기</li>
-                <li>SD 카드 삽입</li>
-                <li>전원 + USB 연결</li>
-                <li>게임 실행</li>
-            </ul>
+            <h2>📦 프로젝트 개요</h2>
+            <p><strong>MT32-Pi</strong>는 Raspberry Pi Zero 2W의 강력한 성능을 활용하여 고전 Roland MT-32 미디 모듈을 Bare-metal(OS 없이 직접
+                구동) 방식으로 완벽하게 에뮬레이션하는 오픈소스 프로젝트입니다.</p>
+            <p>Plumkit의 MT32-Pi 키트는 이 복잡한 과정을 누구나 쉽게 마칠 수 있도록 최적화된 하드웨어 솔루션을 제공합니다.</p>
+        </section>
+
+        <!-- Prerequisites Section -->
+        <section class="card">
+            <h2>🛠️ 준비물 및 사양</h2>
+            <div class="checklist-grid" style="grid-template-columns: 1fr;">
+                <div class="check-item">
+                    <span class="check-icon">🍓</span>
+                    <div><strong>Raspberry Pi Zero 2WH (필수)</strong><br><small style="color: #aaa;">Zero 2W 모델 권장 (일반
+                            Zero는 성능 부족으로 끊김 발생)</small></div>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">💾</span>
+                    <div><strong>Micro SD 카드</strong><br><small style="color: #aaa;">FAT32 포맷, 8GB~32GB 권장</small></div>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">🔌</span>
+                    <div><strong>5V 3A 이상 전원</strong><br><small style="color: #aaa;">저전력 어댑터 사용 시 노이즈나 재부팅이 발생할 수
+                            있습니다.</small></div>
+                </div>
+            </div>
         </section>
 
         <!-- 1단계 -->
@@ -134,9 +152,67 @@
             </p>
         </section>
 
-        <!-- 4단계 -->
+        <!-- 미디 플레이어 테스트 -->
         <section class="card">
-            <h2>4단계: 게임 설정</h2>
+            <h2>미디 플레이어 테스트 (JMPlayer)</h2>
+            <p>MT32-Pi가 정상적으로 인식되고 소리가 나오는지 확인하는 과정입니다.</p>
+            <ul class="instruction-list">
+                <li><strong>JMPlayer 준비:</strong> <a href="https://cafe.naver.com/raspigamer/59049" target="_blank"
+                        style="color: #BB86FC; font-weight: bold; text-decoration: underline;">라즈겜동 네이버 카페</a>에서
+                    JMPlayer(JJoMe MIDI Player)를 다운로드하고 실행합니다.</li>
+                <li><strong>출력 장치 설정:</strong> PC에 MT32-Pi를 연결 후 상단 메뉴의 <strong>CircuitPython Audio</strong>를 선택합니다.
+                </li>
+                <li><strong>파일 추가:</strong> <code>File</code> 또는 <code>Folder</code> 버튼을 눌러 테스트용 미디 파일(.mid) 또는 노래방
+                    파일(.nob)을 불러옵니다.
+                    <br><small style="color: #aaa;">(테스트용 파일이 없다면? <a
+                            href="https://drive.google.com/drive/folders/1e_TpPjapIlJLsEfuz8TYEv7jquhgLLbC?usp=sharing"
+                            target="_blank" style="color: #BB86FC; text-decoration: underline;">Windows 기본 미디 샘플
+                            다운로드</a>)</small>
+                </li>
+                <li><strong>재생:</strong> <code>PLAY</code> 버튼을 눌러 스피커에서 소리가 나오는지 확인합니다.</li>
+                <li><strong>모니터링:</strong> 📊 아이콘(채널 모니터)을 누르면 현재 연주되는 채널, 악기, 볼륨 상태를 실시간으로 확인할 수 있습니다.</li>
+            </ul>
+            <div class="image-container" style="margin-top: 20px;">
+                <img src="static/img/jmplayer.png" alt="JMPlayer 실행 화면" loading="lazy">
+                <p class="caption">JMPlayer 실행 및 설정 화면</p>
+            </div>
+            <div class="tip"
+                style="background: #1A391A; padding: 15px; border-radius: 8px; border-left: 4px solid #4ADE80; font-size: 14px; margin-top: 15px;">
+                <strong>💡 팁:</strong> 소리가 나지 않는다면 <code>MIDI 장치 선택</code> 메뉴 옆의 <strong>R</strong> 버튼을 눌러 장치 목록을 갱신해
+                보세요.
+            </div>
+        </section>
+
+        <!-- 사운드폰트 설정 -->
+        <section class="card">
+            <h2>🎹 사운드폰트(FluidSynth) 활용</h2>
+            <p>MT32-Pi는 MT-32 뿐만 아니라 현대적인 고음질 사운드폰트(.sf2)를 재생할 수 있는 FluidSynth 모드를 지원합니다.</p>
+            <ul class="instruction-list">
+                <li>SD 카드의 <code>soundfonts</code> 폴더에 <code>.sf2</code> 파일을 복사하세요.</li>
+                <li><strong>모드 전환:</strong> 기기 전면의 <strong>SYNTH</strong> 버튼으로 MT-32 모드와 사운드폰트 모드를 실시간 전환합니다.</li>
+                <li><strong>폰트 교체:</strong> 사운드폰트 모드에서 <strong>ROM</strong> 버튼을 눌러 여러 폰트를 순서대로 선택할 수 있습니다.</li>
+            </ul>
+            <div class="image-container" style="margin-top: 20px;">
+                <img src="static/img/front.png" alt="MT32-Pi 전면 버튼" loading="lazy">
+                <p class="caption">기기 전면: SYNTH(모드 전환) 및 ROM(폰트 교체) 버튼 위치</p>
+            </div>
+            <div class="tip"
+                style="background: #1A1A39; padding: 15px; border-radius: 8px; border-left: 4px solid #BB86FC; font-size: 14px; margin-top: 15px;">
+                <strong style="color: var(--accent-color);">💡 추천 폰트:</strong> 화려한 오케스트라 사운드를 원하신다면
+                <code>GeneralUser GS</code>나 <code>SC-55</code> 스타일의 사운드폰트를 사용해 보세요.
+                <br><br>
+                <div style="font-size: 0.9em; color: #aaa; margin-bottom: 15px;">
+                    <strong>🔍 꿀팁:</strong> SC-55 사운드폰트는 종류가 많습니다. 그 중 파일 용량이 <strong>약 103.4MB</strong>인 버전을 찾는 것이 가장
+                    원음에 가깝고 퀄리티가 좋기로 유명하니 참고하세요!
+                </div>
+                <a href="https://www.google.com/search?q=sc-55+soundfont" target="_blank"
+                    style="color: #BB86FC; text-decoration: underline; font-weight: bold;">[구글에서 SC-55 사운드폰트 찾기]</a>
+            </div>
+        </section>
+
+        <!-- 게임 설정 -->
+        <section class="card">
+            <h2>게임 설정</h2>
             <h3>A. DOSBox (PC)</h3>
             <p><code>dosbox.conf</code> 파일을 수정하세요.</p>
             <pre>
@@ -173,7 +249,7 @@ midiconfig = (장치 관리자의 mt32-pi 번호)</pre>
                         <tr>
                             <td>인식 안됨</td>
                             <td>USB 불량</td>
-                            <td>케이블 교체</td>
+                            <td>케이블 재연결 또는 교체</td>
                         </tr>
                         <tr>
                             <td>볼륨 조절 안됨</td>

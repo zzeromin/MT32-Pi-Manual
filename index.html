@@ -38,7 +38,7 @@
                 <img src="static/img/logo.png" alt="Plumkit Logo" class="logo">
                 <button class="btn-menu" id="menu-btn" aria-label="목차 열기">≡</button>
             </div>
-            <div class="step-counter">Step <span id="current-step-num">1</span> of 9</div>
+            <div class="step-counter">Step <span id="current-step-num">0</span> of 10</div>
             <div class="progress-container">
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
@@ -46,8 +46,52 @@
 
         <!-- Steps Container -->
         <div id="steps-container">
+            <!-- Step 0: Preparation -->
+            <div class="step-item active" data-step="0">
+                <section class="card">
+                    <div class="tutorial-meta">
+                        <span class="badge time">⏱️ 약 10분 소요</span>
+                        <span class="badge difficulty">🟢 난이도: 쉬움</span>
+                    </div>
+                    <h2>시작 전 준비물</h2>
+                    <p class="instruction">원활한 설치를 위해 다음 준비물을 확인해 주세요.</p>
+                    <ul class="checklist-grid">
+                        <li>
+                            <div class="check-item">
+                                <span class="check-icon">📦</span>
+                                <div><strong>MT32-Pi 키트</strong></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-item">
+                                <span class="check-icon">🍓</span>
+                                <div><strong>Pi Zero 2WH</strong> (헤더 포함)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-item">
+                                <span class="check-icon">💾</span>
+                                <div><strong>Micro SD 카드</strong> (1GB 이상 권장)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-item">
+                                <span class="check-icon">🔌</span>
+                                <div><strong>5V 3A 전원</strong> & USB-C 케이블</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-item">
+                                <span class="check-icon">🪛</span>
+                                <div><strong>(+) 육각 렌치 or 드라이버</strong></div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
             <!-- Step 1 -->
-            <div class="step-item active" data-step="1">
+            <div class="step-item" data-step="1">
                 <section class="card">
                     <h2>1. 하드웨어 설치</h2>
                     <div class="hw-step">
@@ -175,8 +219,25 @@
                         <p class="instruction"><strong>STEP 9.</strong> AUX - 스피커 / 헤드폰 연결</p>
                         <div class="image-container">
                             <img src="static/img/cable_step3.png" alt="AUX 연결" loading="lazy">
-                            <p class="caption">3.5mm 단자를 통해 스피커나 헤드폰을 연결하세요. 사운드 출력을 담당합니다.</p>
+                            <p class="caption">USB-C 단자 옆의 3.5mm 단자를 통해 스피커나 헤드폰을 연결하세요. 사운드 출력을 담당합니다.</p>
                         </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Step 10: Completion -->
+            <div class="step-item" data-step="10">
+                <section class="card success-card">
+                    <div class="success-icon">🎉</div>
+                    <h2>축하합니다!</h2>
+                    <p class="instruction">모든 설치와 연결이 완료되었습니다.</p>
+                    <div class="next-steps">
+                        <h3>이제 무엇을 할까요?</h3>
+                        <ul class="next-steps-list">
+                            <li><strong>전원 켜기:</strong> 화면에 MT32-Pi 로고가 뜨는지 확인하세요.</li>
+                            <li><strong>사운드 테스트:</strong> 동봉된 AUX 단자로 음악이 들리는지 확인하세요.</li>
+                            <li><strong>상세 설정:</strong> ROM 파일 추가나 사운드폰트 설정법을 알아보세요.</li>
+                        </ul>
                     </div>
                 </section>
             </div>
@@ -190,6 +251,11 @@
                     <button class="btn-close" id="close-menu">✕</button>
                 </h3>
                 <ul class="jump-list">
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(0)" class="jump-link">
+                            <span class="step-tag">Step 0</span> 시작 전 준비물
+                        </a>
+                    </li>
                     <li class="jump-item">
                         <div class="jump-link section-break">1. 하드웨어 조립</div>
                     </li>
@@ -214,6 +280,9 @@
                         </a>
                     </li>
                     <li class="jump-item">
+                        <div class="jump-link section-break">2. 펌웨어 설치</div>
+                    </li>
+                    <li class="jump-item">
                         <a href="javascript:void(0)" onclick="jumpToStep(6)" class="jump-link">
                             <span class="step-tag">Step 6</span> 펌웨어 다운로드
                         </a>
@@ -234,6 +303,13 @@
                     <li class="jump-item">
                         <a href="javascript:void(0)" onclick="jumpToStep(9)" class="jump-link">
                             <span class="step-tag">Step 9</span> AUX 연결
+                        </a>
+                    </li>
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(10)" class="jump-link"
+                            style="color: var(--accent-color); font-weight: bold;">
+                            <span class="step-tag" style="background: var(--accent-color); color: #000;">Final</span> 설치
+                            완료
                         </a>
                     </li>
                 </ul>
@@ -264,8 +340,8 @@
     </div>
 
     <script>
-        let currentStep = 1;
-        const totalSteps = 9;
+        let currentStep = 0;
+        const totalSteps = 10;
         const progressBar = document.getElementById('progress-bar');
         const currentStepNum = document.getElementById('current-step-num');
         const prevBtn = document.getElementById('prev-btn');
@@ -298,7 +374,9 @@
             });
 
             // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (currentStep > 0) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
 
         // Jump to specific step
