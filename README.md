@@ -41,10 +41,10 @@
 
 ## ✉️ 문의 및 지원
 
-본 매뉴얼과 키트 조립에 대한 문의사항은 아래 커뮤니티를 통해 연락주세요.
+본 매뉴얼과 키트 조립에 대한 문의사항은 아래 링크를 통해 연락주세요.
 
-- **커뮤니티**: 라즈겜동 (영민)
-- **제조/배포**: Plumkit
+- **커뮤니티**: [라즈겜동 (영민)](https://cafe.naver.com/raspigamer)
+- **제조/배포**: [Plumkit (스마트스토어)](https://smartstore.naver.com/plumkit/)
 
 ---
 © 2026 Plumkit. All rights reserved.
