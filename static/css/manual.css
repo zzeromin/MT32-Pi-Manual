@@ -555,13 +555,15 @@ hr {
     font-size: 14px;
     margin-top: 10px;
     color: var(--text-secondary);
-    display: flex;
-    gap: 10px;
+    position: relative;
+    padding-left: 15px;
 }
 
 .next-steps-list li::before {
     content: "•";
     color: var(--accent-color);
+    position: absolute;
+    left: 0;
 }
 
 /* Navigation Overlay Show */
