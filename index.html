@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>MT32-Pi 퀵 가이드 - Plumkit</title>
     <meta name="description" content="확대 필요 없는 모바일 최적화 MT32-Pi 설치 가이드. 하드웨어 조립부터 펌웨어 세팅까지 한 번에 끝내세요.">
+    <meta name="keywords" content="MT32-Pi, 고전게임, 미디모듈, 라즈베리파이, plumkit, 라즈겜동, SC55">
     <link rel="canonical" href="https://zzeromin.github.io/MT32-Pi-Manual/">
 
     <!-- Open Graph / Facebook -->
@@ -378,6 +379,16 @@
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         const steps = document.querySelectorAll('.step-item');
+        const STORAGE_KEY = 'mt32pi_manual_step';
+
+        // Load saved progress
+        const savedStep = localStorage.getItem(STORAGE_KEY);
+        if (savedStep !== null) {
+            currentStep = parseInt(savedStep);
+            if (isNaN(currentStep) || currentStep < 0 || currentStep > totalSteps) {
+                currentStep = 0;
+            }
+        }
 
         // Modal elements
         const menuBtn = document.getElementById('menu-btn');
@@ -403,6 +414,9 @@
                     step.classList.add('active');
                 }
             });
+
+            // Save progress
+            localStorage.setItem(STORAGE_KEY, currentStep);
 
             // Scroll to top
             if (currentStep > 0) {
