@@ -185,6 +185,24 @@ p {
     display: block;
 }
 
+.image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 480px) {
+    .image-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    .image-grid .image-container {
+        margin-bottom: 0;
+    }
+}
+
 /* Buttons */
 .btn-download {
     display: flex;
