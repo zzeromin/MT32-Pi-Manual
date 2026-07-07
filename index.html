@@ -39,7 +39,7 @@
                 <img src="static/img/logo.png" alt="Plumkit Logo" class="logo">
                 <button class="btn-menu" id="menu-btn" aria-label="목차 열기">≡</button>
             </div>
-            <div class="step-counter">Step <span id="current-step-num">0</span> of 10</div>
+            <div class="step-counter">Step <span id="current-step-num">0</span> of 11</div>
             <div class="progress-container">
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
@@ -260,8 +260,28 @@
                 </section>
             </div>
 
-            <!-- Step 10: Completion -->
+            <!-- Step 10: Reference Material -->
             <div class="step-item" data-step="10">
+                <section class="card">
+                    <h2>4. 참고자료</h2>
+                    <div class="hw-step">
+                        <p class="instruction"><strong>재생 가능 파일 안내</strong></p>
+                        <ul class="instruction-list">
+                            <li>
+                                <strong>재생 가능 MIDI 파일:</strong><br>
+                                <code>mid</code>, <code>nob</code>, <code>okm</code> 등의 MIDI 파일은 mt32-pi OS에서 직접 재생할 수 있습니다.
+                            </li>
+                            <li>
+                                <strong>직접 재생 불가능한 파일:</strong><br>
+                                <code>ims</code>, <code>rol</code>, <code>sop</code> 등의 OPL 기반 파일은 mt32-pi OS에서 직접 재생할 수 없으며, 추가로 프로그램을 설치해야 합니다.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Step 11: Completion -->
+            <div class="step-item" data-step="11">
                 <section class="card success-card">
                     <div class="success-icon">🎉</div>
                     <h2>축하합니다!</h2>
@@ -352,7 +372,15 @@
                         </a>
                     </li>
                     <li class="jump-item">
-                        <a href="javascript:void(0)" onclick="jumpToStep(10)" class="jump-link"
+                        <div class="jump-link section-break">4. 참고자료</div>
+                    </li>
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(10)" class="jump-link">
+                            <span class="step-tag">Step 10</span> 재생 가능 파일 안내
+                        </a>
+                    </li>
+                    <li class="jump-item">
+                        <a href="javascript:void(0)" onclick="jumpToStep(11)" class="jump-link"
                             style="color: var(--accent-color); font-weight: bold;">
                             <span class="step-tag" style="background: var(--accent-color); color: #000;">Final</span> 설치
                             완료
@@ -387,7 +415,7 @@
 
     <script>
         let currentStep = 0;
-        const totalSteps = 10;
+        const totalSteps = 11;
         const progressBar = document.getElementById('progress-bar');
         const currentStepNum = document.getElementById('current-step-num');
         const prevBtn = document.getElementById('prev-btn');
